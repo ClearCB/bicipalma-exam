@@ -4,8 +4,8 @@ public class Bicicleta {
     int id;
 
     // Constructor
-    Bicicleta(int id){
-        this.id = id;
+    public Bicicleta(int id){
+        setId(id);;
     }
 
     // Getters y setters

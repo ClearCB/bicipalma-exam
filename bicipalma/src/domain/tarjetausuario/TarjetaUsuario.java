@@ -5,7 +5,7 @@ public class TarjetaUsuario {
     boolean activada;
 
     // Constructor
-    TarjetaUsuario(int id, boolean activada){
+    public TarjetaUsuario(int id, boolean activada){
         this.id = id;
         this.activada = activada;
     }

@@ -2,7 +2,7 @@ package appalma;
 
 import domain.bicicleta.Bicicleta;
 import domain.estacion.Estacion;
-import domain.tarjetausuario.TarjetaUsuario;
+import domain.tarjetausuario.TarjetaUsuario.*;
 
 public class BiciPalma {
 
@@ -30,14 +30,14 @@ public class BiciPalma {
 		
 		int[] bicicletas = {291, 292, 293, 294};
 		
-		/* // generar anclaje random 
-		for (int i: bicicletas){
-			System.out.println( estacion.generarAnclaje());
-		}
-		*/
+	
+		// for (int i: bicicletas){
+		// 	System.out.println( estacion.generarAnclaje());
+		// }
 		
 		for ( int id: bicicletas ){
 			Bicicleta bicicleta = new Bicicleta(id);
+			System.out.println( estacion.mostrarBicicleta(bicicleta));
 			estacion.anclarBicicleta(bicicleta);
 		}
 
