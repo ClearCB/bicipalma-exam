@@ -1,17 +1,17 @@
 package domain.tarjetausuario;
 
 public class TarjetaUsuario {
-    int id;
+    String id;
     boolean activada;
 
     // Constructor
-    public TarjetaUsuario(int id, boolean activada){
+    public TarjetaUsuario(String id, boolean activada){
         this.id = id;
         this.activada = activada;
     }
 
     // Getters y setters
-    public int getId(){
+    public String getId(){
         return this.id;
     }
 
@@ -19,7 +19,7 @@ public class TarjetaUsuario {
         return this.activada;
     }
 
-    public void setId(int value){
+    public void setId(String value){
         this.id = value;
     }
 

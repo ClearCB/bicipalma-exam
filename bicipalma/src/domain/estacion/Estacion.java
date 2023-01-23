@@ -3,6 +3,7 @@ package domain.estacion;
 import java.util.ArrayList;
 
 import domain.bicicleta.Bicicleta;
+import domain.tarjetausuario.TarjetaUsuario;
 
 public class Estacion {
     public int id;
@@ -50,6 +51,7 @@ public class Estacion {
         this.anclajes = new ArrayList<Bicicleta>();
     }
 
+    // Métodos
     public void consultarEstacion(){
         System.out.println(this.toString());
     }
@@ -63,21 +65,17 @@ public class Estacion {
     }
 
     public String mostrarBicicleta(Bicicleta id){
-
         return ("bicicleta: "+ id.getId() + " anclada en el anclaje: "+ this.posicionAnclaje(id));
     }
 
     public String posicionAnclaje(Bicicleta id){
         return Integer.toString((this.getAnclajes().indexOf(id)+1));
-        
     }
 
     public void consultarAnclajes(){
-
         StringBuilder consulta = new StringBuilder();
 
         for (int i=0; i<this.getAnclajes().size(); i++){
-
             Bicicleta bici = this.getAnclajes().get(i);
             consulta.append("\n Anclaje "+ (i+1)+": " + bici.getId());
         }
@@ -90,9 +88,12 @@ public class Estacion {
        
     }
 
+    public 
+
     @Override
     public String toString(){
         StringBuilder identificador = new StringBuilder("\n id: "+this.getId());
+
         identificador.append("\n direccion: "+this.getDireccion());
         identificador.append("\n numeroAnclajes: "+this.getNumeroAnclajes());
 
