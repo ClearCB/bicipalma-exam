@@ -1,7 +1,5 @@
 package domain.estacion;
 
-import java.util.ArrayList;
-
 import domain.bicicleta.Bicicleta;
 import domain.tarjetausuario.TarjetaUsuario;
 
@@ -9,14 +7,14 @@ public class Estacion {
     public int id;
     public String direccion;
     private int numeroAnclajes;
-    private ArrayList<Bicicleta> anclajes;
+    private int[] anclajes;
 
     // Constructor
     public Estacion(int id, String direccion, int numeroAnclajes){
         setId(id);
         setDireccion(direccion);
         setNumeroAnclajes(numeroAnclajes);
-        setAnclajes();
+        setAnclajes(numeroAnclajes);
     }
 
     // Setters y getters
@@ -32,7 +30,7 @@ public class Estacion {
         return this.numeroAnclajes;
     }
 
-    private ArrayList<Bicicleta> getAnclajes(){
+    private int[] getAnclajes(){
         return this.anclajes;
     }
     public void setId(int value){
@@ -47,8 +45,8 @@ public class Estacion {
         this.numeroAnclajes = anclajes;
     }
 
-    public void setAnclajes(){
-        this.anclajes = new ArrayList<Bicicleta>();
+    public void setAnclajes(int anclajes){
+        this.anclajes = new int[anclajes];
     }
 
     // Métodos
@@ -57,38 +55,79 @@ public class Estacion {
     }
 
     public int anclajesLibres(){
-        return this.getNumeroAnclajes()-this.getAnclajes().size();
-    }
+        int anclajesLibres = 0;
 
-    public void anclarBicicleta(Bicicleta idBicicleta){
-        this.getAnclajes().add(idBicicleta);
+        for (int i = 0; i < this.anclajes.length; i++) {
+            if (this.anclajes[i] == 0) {
+                anclajesLibres++;
+            }
+        }
+        return anclajesLibres;
+
+       }
+
+    public void anclarBicicleta(Bicicleta bicicleta){
+        for (int i = 0; i < getNumeroAnclajes(); i++) {
+            if(this.anclajes[i] == 0){
+                this.anclajes[i] = bicicleta.getId();
+                break;
+            }
+        }
     }
 
     public String mostrarBicicleta(Bicicleta id){
         return ("bicicleta: "+ id.getId() + " anclada en el anclaje: "+ this.posicionAnclaje(id));
     }
 
-    public String posicionAnclaje(Bicicleta id){
-        return Integer.toString((this.getAnclajes().indexOf(id)+1));
+    public int posicionAnclaje(Bicicleta id){
+        int len = this.getAnclajes().length;
+
+        for (int i = 0; i<len; i++){
+
+            if (this.getAnclajes()[i] == id.getId()){
+                return i+1;
+            }
+        }
+        return 0;
     }
 
     public void consultarAnclajes(){
         StringBuilder consulta = new StringBuilder();
 
-        for (int i=0; i<this.getAnclajes().size(); i++){
-            Bicicleta bici = this.getAnclajes().get(i);
-            consulta.append("\n Anclaje "+ (i+1)+": " + bici.getId());
-        }
+        for (int i=0; i<this.getAnclajes().length; i++){
 
-        for (int j=this.getAnclajes().size(); j<this.getNumeroAnclajes(); j++){
-            consulta.append("\n Anclaje "+ (j+1) +": "+ "Libre");
-        }
-        
+            int idici = this.getAnclajes()[i];
+            if (this.getAnclajes()[i] == 0){
+                consulta.append("\n Anclaje "+ (i+1) +": "+ "Libre");
+            }
+            else{
+                consulta.append("\n Anclaje "+ (i+1)+": " + idici);
+            }
+        } 
         System.out.println(consulta);
-       
     }
 
-    public 
+    
+
+    public String leerTarjetaUsuario(TarjetaUsuario tarjeta){
+        
+        return String.valueOf(tarjeta.getActivada());
+    }
+
+    public void retirarBicicleta(TarjetaUsuario tarjetaUsuario){
+
+        if (tarjetaUsuario.getActivada()) {
+
+            for (int i = 0; i < numeroAnclajes; i++) {
+                if (this.anclajes[i] != 0) {
+                    int bicicleta = this.anclajes[i];
+                    this.anclajes[i] = 0;
+                    System.out.println("bicicleta retirada: "+ bicicleta+ " del anclaje: "+ (i+1));
+                    break;
+                }
+            }
+        }
+    }
 
     @Override
     public String toString(){
@@ -99,5 +138,4 @@ public class Estacion {
 
         return identificador.toString();
     }
-
 }
