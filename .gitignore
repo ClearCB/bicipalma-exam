@@ -31,4 +31,5 @@ lib/
 lib
 
 # vscode
+.vscode/
 .vscode
