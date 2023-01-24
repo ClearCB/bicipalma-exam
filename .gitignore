@@ -29,3 +29,6 @@ bin
 # lib
 lib/
 lib
+
+# vscode
+.vscode
