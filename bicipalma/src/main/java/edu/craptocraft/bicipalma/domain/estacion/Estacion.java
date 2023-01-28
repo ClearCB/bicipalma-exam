@@ -3,6 +3,7 @@ package edu.craptocraft.bicipalma.domain.estacion;
 import java.lang.reflect.Array;
 
 import edu.craptocraft.bicipalma.domain.bicicleta.Bicicleta;
+import edu.craptocraft.bicipalma.domain.tarjetausuario.TarjetaUsuario;
 
 public class Estacion {
     final int id;
@@ -58,6 +59,22 @@ public class Estacion {
             }
         }
 
+    }
+
+    public boolean leerTarjetaUsuario(TarjetaUsuario tarjeta){
+        return tarjeta.isActivada();
+
+    }
+
+    public void retirarBicicleta(TarjetaUsuario tarjeta){
+        if ( (tarjeta.isActivada()) && (this.anclajesLibres()!=6) ){
+            for (int i = 0; i<this.getAnclajes().length; i++){
+
+                if (this.getAnclajes()[i] != null){
+                    this.getAnclajes()[i] = null;
+                }
+            }
+        }
     }
 
     @Override
