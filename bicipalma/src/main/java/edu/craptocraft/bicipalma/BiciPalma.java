@@ -1,6 +1,6 @@
 package edu.craptocraft.bicipalma;
 
-import edu.craptocraft.bicipalma.domain.estacion.*;;
+import edu.craptocraft.bicipalma.domain.estacion.*;
 
 public class BiciPalma {
 
@@ -16,11 +16,11 @@ public class BiciPalma {
 		
 		estacion.consultarEstacion();
 				
-		// /* caso TEST visualizar anclajes libres */
+		/* caso TEST visualizar anclajes libres */
 		
-		// System.out.println("\n **** caso TEST visualizar anclajes libres **** \n");
+		System.out.println("\n **** caso TEST visualizar anclajes libres **** \n");
 		
-		// System.out.println("anclajesLibres: " + estacion.anclajesLibres());
+		System.out.println("anclajesLibres: " + estacion.anclajesLibres());
 
 		// /* caso TEST anclar bicicleta(s) */
 
