@@ -72,9 +72,26 @@ public class Estacion {
 
                 if (this.getAnclajes()[i] != null){
                     this.getAnclajes()[i] = null;
+                    break;
                 }
             }
         }
+    }
+
+    public void consultarAnclajes(){
+        StringBuilder informacionAnclajes = new StringBuilder();
+        for (int i = 0; i<this.getAnclajes().length; i++){
+
+            if (this.getAnclajes()[i] != null){
+                informacionAnclajes.append("\nAnclaje " + (i+1) + ": " + this.getAnclajes()[i].getId());
+            }
+            else{
+                informacionAnclajes.append("\nAnclaje " + (i+1) + ": libre");
+            }
+        }
+
+        System.out.println(informacionAnclajes.toString());
+
     }
 
     @Override

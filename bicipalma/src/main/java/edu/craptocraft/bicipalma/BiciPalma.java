@@ -2,6 +2,7 @@ package edu.craptocraft.bicipalma;
 
 import edu.craptocraft.bicipalma.domain.estacion.*;
 import edu.craptocraft.bicipalma.domain.bicicleta.*;
+import edu.craptocraft.bicipalma.domain.tarjetausuario.*;
 
 public class BiciPalma {
 
