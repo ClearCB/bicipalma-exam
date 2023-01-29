@@ -1,4 +1,4 @@
-# bicipalma-examen
+# Bicipalma Exam
 
 A repository to solve the problem of the year 2014 to train static arrays in Java and getting familiar with this new language.
 
@@ -13,3 +13,8 @@ I did not follow the diagram to code it all since i just tried to solve it using
 While i was writing code i tried to solve the [test cases](./bicipalma/src/test/java/edu/craptocraft/bicipalma/domain/estacion/EstacionTest.java) and the following "users story"/"uses cases":
 
 ![salida](./doc/Salidabicipalma.png)
+
+
+## UML
+
+![uml](diagrama_clases_UML.png)
