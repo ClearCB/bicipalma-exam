@@ -1,6 +1,6 @@
 package edu.craptocraft.bicipalma.domain.bicicleta;
 
-public class Bicicleta {
+public class Bicicleta implements Movil{
     final int id;
 
     public Bicicleta(int id){

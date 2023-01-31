@@ -1,6 +1,5 @@
 package edu.craptocraft.bicipalma.domain.estacion;
 
-import java.lang.reflect.Array;
 
 import edu.craptocraft.bicipalma.domain.bicicleta.Bicicleta;
 import edu.craptocraft.bicipalma.domain.tarjetausuario.TarjetaUsuario;
