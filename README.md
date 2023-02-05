@@ -1,5 +1,7 @@
 # Bicipalma Exam
 
+IMPORTANT! All the starting information was provided by my teacher before doing the exam. (UML, userstories, etc.).
+
 A repository to solve the problem of the year 2014 to train static arrays in Java and getting familiar with this new language.
 
 This is created to solve it with TDD: using the test cases, the UML diagram and the main app that the teacher gave us.
