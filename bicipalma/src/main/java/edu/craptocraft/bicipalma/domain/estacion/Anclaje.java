@@ -1,3 +1,4 @@
+// This class is implemented to make the app scalable in the future, but it is not implemented in the "Estacion" class 
 package edu.craptocraft.bicipalma.domain.estacion;
 
 import edu.craptocraft.bicipalma.domain.bicicleta.Movil;
