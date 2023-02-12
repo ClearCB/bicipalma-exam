@@ -10,6 +10,8 @@ The [link](https://github.com/dfleta/bicipalma) to the solution of my teacher.
 
 I did not follow the diagram to code it all since i just tried to solve it using TDD and making it the simplest posible.
 
+The app tries to create a replica about a popular app in palma, Spain, that consist in renting bikes that are located all around the city.
+
 ## Users Story
 
 While i was writing code i tried to solve the [test cases](./bicipalma/src/test/java/edu/craptocraft/bicipalma/domain/estacion/EstacionTest.java) and the following "users story"/"uses cases":
